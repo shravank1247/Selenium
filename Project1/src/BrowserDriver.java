@@ -23,7 +23,8 @@ public class BrowserDriver {
 		driver.get("https://rahulshettyacademy.com");
 		System.out.println("Title @@@@ === > "+ driver.getTitle());
 		System.out.println("Current URL @@@@ === > "+  driver.getCurrentUrl());
-
+			
+		driver.getTitle();
 		driver.close();
 
 		//driver.quit();
