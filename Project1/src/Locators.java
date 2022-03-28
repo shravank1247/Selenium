@@ -1,4 +1,5 @@
 import java.time.Duration;
+import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -51,6 +52,22 @@ public class Locators {
 		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
 		
 		System.out.println("New Password is @@@@@ " + driver.findElement(By.cssSelector("form p")).getText());
+		
+		//Xpath using full xpath of parent and then finding index of child
+		driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[1]")).click();
+
+		Thread.sleep(1000);
+
+		//CssSelector with ID
+		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("rahul");
+
+		//CssSelector with regex match
+		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
+
+		driver.findElement(By.id("chkboxOne")).click();
+
+		//Xpath with regex match
+		driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
 		
 		
 		
