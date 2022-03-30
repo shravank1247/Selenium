@@ -12,6 +12,8 @@ public class UpdatedDropdown {
 		
 		driver.get("https://www.spicejet.com/");
 		System.out.println("before increment count is ::::"+driver.findElement(By.xpath("//div[text()=\"1 Adult\"]")).getText());
+		
+		//Incrementing persons in drop-down 
 		driver.findElement(By.xpath("//div[text()=\"1 Adult\"]")).click();
 		for(int i=1;i<4;i++)
 		{
