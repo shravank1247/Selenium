@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="String s= driver.findElement(By.xpath(&quot;//button[contains(@class,&apos;submit&apos;)]&quot;)).getText();"/>
+		<list key="findhistory">
+			<item value="String s= driver.findElement(By.xpath(&quot;//button[contains(@class,&apos;submit&apos;)]&quot;)).getText();"/>
+		</list>
+	</section>
+</section>
