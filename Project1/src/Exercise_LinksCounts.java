@@ -6,7 +6,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class Exercise_LinksCounts {
 
@@ -37,7 +36,7 @@ public class Exercise_LinksCounts {
 		System.out.println("total footer link count is ::"+l);
 		
 		//clicking on each links
-		for(int a =1; a < footerFirstClmnDriver.findElements(By.tagName("a")).size();a++)
+		for(int a =0; a < footerFirstClmnDriver.findElements(By.tagName("a")).size();a++)
 		{
 			String clickOnLink = Keys.chord(Keys.CONTROL,Keys.ENTER);
 			footerFirstClmnDriver.findElements(By.tagName("a")).get(a).sendKeys(clickOnLink);
