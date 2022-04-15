@@ -1,0 +1,59 @@
+
+1. Actions
+//Actions class declaration
+Actions act = new Actions(driver);
+//Mouse hover
+act.moveToElement(WebElement).build().perform();
+
+2. Implicit Wait
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+3. Explicit Wait
+	a. WebDriverWait
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
+		w.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("button#okayBtn")));
+	
+	b.Fluent Wait
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+			.withTimeout(Duration.ofSeconds(30))
+			.pollingEvery(Duration.ofMillis(500))
+			.ignoring(NoSuchElementException.class);
+		WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+			driver.findElement(By.cssSelector("div#finish h4")).isDisplayed()}
+			
+			
+4. Static Dropdowns - Select class
+Select s = new Select(dropdown WebElement);
+s.selectByVisibleText("Consultant");
+
+5. Frames
+driver.switchTo().frame(ID,String,WebElement);
+
+6. WindowHandles - Swicthing between windows
+Set<String> handle = driver.getWindowHandles();
+Iterator<String> itr = handle.iterator();
+driver.switchTo().window(itr.next()); // Parent window
+driver.switchTo().window(itr.next()); // Child Window
+
+
+//Set WebDriver property
+System.setProperty("webdriver.chrome.driver",path of chrome driver) 
+System.setProperty("webdriver.gecko.driver",path of firefox driver)
+System.setProperty("webdriver.edge.driver",path of edge driver)
+
+
+//Multiple items to add Cart
+List<WebElement> names = driver.findElements(By.cssSelector("h4.card-title"));
+for (int i = 0; i < names.size(); i++) 
+{
+driver.findElements(By.cssSelector("h4.card-title")).get(i).getText();
+driver.findElements(By.xpath("//button[text()='Add ']")).get(i).click();
+}
+
+
+//How to check number of checkboxes
+driver.findElements(By.xpath("//input[@type='checkbox']")).size();
+
+//Browser window actions
+driver.manage().window().maximize()/back()/refresh()/forward()/close();

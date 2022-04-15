@@ -1,24 +1,59 @@
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddToCart {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) 
+	{
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\STelukuntha\\OneDrive - Sensia Global\\Avocet\\Automation\\Selenium\\BrowserDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+	
+	//Explicit wait declaration
+		WebDriverWait w = new WebDriverWait(driver,Duration.ofSeconds(5));
+		
+		String[] vegs = { "Cauliflower", "Cucumber", "Carrot", "Beans" };
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/");
 
-		Thread.sleep(2000);
+	//Implicit wait - Global wait for each step execution
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		AddItems(driver,vegs);
+		driver.findElement(By.xpath("//img[@alt='Cart']")).click();
+	
+	//Explicit wait implementation on specific element
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='PROCEED TO CHECKOUT']")));
+		driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
+	
+	//Explicit wait implementation on specific element
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input.promoCode")));
+		driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.cssSelector("button.promoBtn")).click();
+	
+	//Explicit wait implementation on specific element
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Code applied ..!']")));
+		String codeStr = driver.findElement(By.xpath("//span[text()='Code applied ..!']")).getText();
+		System.out.println("Text returned after code applied is :::: "+codeStr);
+		
+					
+	
+		
+		//driver.close();
+
+	}
+	
+	public static void AddItems(WebDriver driver, String[] vegs)
+	{
 		int a = 0;
-		String[] vegs = { "Cauliflower", "Cucumber", "Carrot", "Beans" };
+		
 
 		// Convert String array to List for easy comparison
 		List<String> vegsList = Arrays.asList(vegs);
@@ -51,12 +86,8 @@ public class AddToCart {
 					System.out.println("Added all products");
 					break;
 				}
-					
 			}
-		}
-		
-		driver.close();
-
 	}
-
+	}
 }
+

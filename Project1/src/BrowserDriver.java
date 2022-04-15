@@ -13,11 +13,11 @@ public class BrowserDriver {
 		WebDriver driver = new ChromeDriver();
 		
 //Firefox
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\STelukuntha\\OneDrive - Sensia Global\\Avocet\\Automation\\Selenium\\BrowserDriver\\geckodriver.exe");
+		//System.setProperty("webdriver.gecko.driver", "C:\\Users\\STelukuntha\\OneDrive - Sensia Global\\Avocet\\Automation\\Selenium\\BrowserDriver\\geckodriver.exe");
 		//WebDriver driver = new FirefoxDriver();
 
 //Microsoft Edge
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\STelukuntha\\OneDrive - Sensia Global\\Avocet\\Automation\\Selenium\\BrowserDriver\\msedgedriver.exe");
+		//System.setProperty("webdriver.edge.driver", "C:\\Users\\STelukuntha\\OneDrive - Sensia Global\\Avocet\\Automation\\Selenium\\BrowserDriver\\msedgedriver.exe");
 		//WebDriver driver = new EdgeDriver();
 
 		driver.get("https://rahulshettyacademy.com");
