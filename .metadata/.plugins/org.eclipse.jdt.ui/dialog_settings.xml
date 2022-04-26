@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\STelukuntha\Downloads\jar_files"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\STelukuntha\Downloads\selenium-java-4.1.3"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
@@ -26,5 +26,31 @@
 	</section>
 	<section name="BuildPathsPropertyPage">
 		<item key="pageIndex" value="2"/>
+	</section>
+	<section name="NewAnnotationWizardPage">
+		<item key="add_documented" value="false"/>
+		<section name="AddRetention">
+			<item key="enabled" value="false"/>
+			<list key="selectedEnums">
+				<item value="CLASS"/>
+			</list>
+		</section>
+		<section name="AddTarget">
+			<item key="enabled" value="false"/>
+			<list key="selectedEnums">
+			</list>
+		</section>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;"/>
+		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="609"/>
+			<item key="DIALOG_Y_ORIGIN" value="213"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
 	</section>
 </section>

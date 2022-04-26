@@ -4,10 +4,10 @@
 Actions act = new Actions(driver);
 //Mouse hover
 act.moveToElement(WebElement).build().perform();
-
+-------------------------------------------------------------------------------------------------------------------------------------
 2. Implicit Wait
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
+-------------------------------------------------------------------------------------------------------------------------------------
 3. Explicit Wait
 	a. WebDriverWait
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -22,19 +22,30 @@ driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			public WebElement apply(WebDriver driver) {
 			driver.findElement(By.cssSelector("div#finish h4")).isDisplayed()}
 			
-			
+-------------------------------------------------------------------------------------------------------------------------------------
 4. Static Dropdowns - Select class
 Select s = new Select(dropdown WebElement);
 s.selectByVisibleText("Consultant");
-
+-------------------------------------------------------------------------------------------------------------------------------------
 5. Frames
 driver.switchTo().frame(ID,String,WebElement);
-
+-------------------------------------------------------------------------------------------------------------------------------------
 6. WindowHandles - Swicthing between windows
 Set<String> handle = driver.getWindowHandles();
 Iterator<String> itr = handle.iterator();
 driver.switchTo().window(itr.next()); // Parent window
 driver.switchTo().window(itr.next()); // Child Window
+-------------------------------------------------------------------------------------------------------------------------------------
+7. Scroll
+//Using javascript scroll can be performed
+//Invoking of javascript
+JavascriptExecutor js = (JavascriptExecutor)driver;
+****JavascriptExecutor is important coz it identifies object which has hidden elements
+//Window page to scroll
+js.executeScript("window.scrollBy(0,500)");
+//Table inside page to scroll
+js.executeScript("document.querySelector('.tableFixHead').scrollTop=500;");
+-------------------------------------------------------------------------------------------------------------------------------------
 
 
 //Set WebDriver property
@@ -56,4 +67,15 @@ driver.findElements(By.xpath("//button[text()='Add ']")).get(i).click();
 driver.findElements(By.xpath("//input[@type='checkbox']")).size();
 
 //Browser window actions
-driver.manage().window().maximize()/back()/refresh()/forward()/close();
+driver.manage().window().maximize()/close();
+driver.navigate().back()/refresh()/forward()
+
+//Set chrome browser behaviour using ChromeOptions class to accept bad ssl
+ChromeOptions op = new ChromeOptions();
+op.setAcceptInsecureCerts(true);
+
+//Set Proxy 
+Proxy proxy = new Proxy();
+proxy.setHttpsProxy("ipaddr:port");
+options.setCapability("proxy",proxy);
+

@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+import org.testng.annotations.Test;
+
+public class Streams {
+
+	//@Test
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<String> name = new ArrayList<String>();
+		name.add("Aarun");
+		name.add("Asha");
+		name.add("Bisa");
+		name.add("Zora");
+		name.add("amma");
+		name.add("Amar");
+		
+		int count = 0;
+		for(int i=0; i<name.size();i++)
+		{
+			String check = name.get(i);
+			if(check.startsWith("A"))
+				count++;
+		}
+		System.out.println("Count of names starting with A is ::: "+count);
+		
+	}
+	
+	//
+	@Test
+	public void streamFilter()
+	{
+		ArrayList<String> name1 = new ArrayList<String>();
+		name1.add("Aarun");
+		name1.add("Asha");
+		name1.add("Bisa");
+		name1.add("Aora");
+		name1.add("amma");
+		name1.add("Amar");
+		
+		//Converting string array 
+		Long filter = name1.stream().filter(temp->temp.startsWith("A")).count();
+		System.out.println("Count of names starting with A using Streams is::: "+filter);
+		
+		//Declaring strings in stream compatible collection
+		 Long str = Stream.of("Aa","Ab","Ba","Bd","ab","Bz").filter(s->
+		 
+			 s.startsWith("B")
+		 ).count();
+		 System.out.println("Count of names starting with B using Stream collection is::: "+str);
+	}
+}

@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+
+import org.testng.annotations.Test;
+
+public class Streams {
+
+	@Test
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<String> name = new ArrayList<String>();
+		name.add("Aarun");
+		name.add("Asha");
+		name.add("Bisa");
+		name.add("Zora");
+		name.add("amma");
+		name.add("Amar");
+		
+		int count = 0;
+		for(int i=0; i<name.size();i++)
+		{
+			String check = name.get(i);
+			if(check.startsWith("A"))
+				count++;
+		}
+		System.out.println("COunt of names starting with A is ::: "+count);
+	}
+
+}

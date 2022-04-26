@@ -1,0 +1,23 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class SSLCheck {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Set chrome browser behaviour using ChromeOptions class to accept bad ssl
+		ChromeOptions op = new ChromeOptions();
+		op.setAcceptInsecureCerts(true);
+		
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\STelukuntha\\OneDrive - Sensia Global\\Avocet\\Automation\\Selenium\\BrowserDriver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver(op);
+		driver.get("https://expired.badssl.com/");
+		System.out.println(driver.getTitle());
+		
+
+	}
+
+}

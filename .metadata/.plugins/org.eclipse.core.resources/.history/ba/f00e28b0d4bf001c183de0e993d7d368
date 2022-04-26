@@ -1,0 +1,27 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrokenLink {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\STelukuntha\\OneDrive - Sensia Global\\Avocet\\Automation\\Selenium\\BrowserDriver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+
+		// limiting the driver scope to footer section
+		WebElement footDriver = driver.findElement(By.xpath("//div[@id='gf-BIG']"));
+		String url = footDriver.findElement(By.tagName("a")).getAttribute("href");
+		System.out.println(url);
+		
+		
+
+		
+	}
+
+}

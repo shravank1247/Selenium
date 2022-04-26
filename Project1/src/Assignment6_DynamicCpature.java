@@ -3,7 +3,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import io.netty.util.internal.SystemPropertyUtil;
 
 public class Assignment6_DynamicCpature {
 
