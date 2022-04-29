@@ -1,0 +1,36 @@
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MultipleWindowsTabs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\STelukuntha\\OneDrive - Sensia Global\\Avocet\\Automation\\Selenium\\BrowserDriver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/angularpractice/");
+		//Open new tab
+		driver.switchTo().newWindow(WindowType.TAB);
+		//Get new tab ID and switch
+		Set<String> handle = driver.getWindowHandles();
+		Iterator<String> ite = handle.iterator();
+		String ParentWin = ite.next();
+		String ChildWin = ite.next();
+		driver.switchTo().window(ChildWin);
+		
+		driver.get("https://rahulshettyacademy.com/");
+		String CourseName = driver.findElements(By.xpath("//a[contains(@href,'https://courses.rahulshettyacademy.com/p/')]")).get(1).getText();
+		
+		driver.switchTo().window(ParentWin);
+		driver.findElement(By.xpath("//input[@name=\"name\"]")).sendKeys(CourseName);
+		
+		
+	}
+
+}
