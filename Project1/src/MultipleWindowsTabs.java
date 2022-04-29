@@ -19,8 +19,9 @@ public class MultipleWindowsTabs {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/angularpractice/");
 		//Open new tab
-		//driver.switchTo().newWindow(WindowType.TAB);
-		driver.switchTo().newWindow(WindowType.WINDOW);
+		driver.switchTo().newWindow(WindowType.TAB);
+		//driver.switchTo().newWindow(WindowType.WINDOW);
+		
 		//Get new tab ID and switch
 		Set<String> handle = driver.getWindowHandles();
 		Iterator<String> ite = handle.iterator();
@@ -38,7 +39,7 @@ public class MultipleWindowsTabs {
 		File file = driver.findElement(By.xpath("//input[@name=\"name\"]")).getScreenshotAs(OutputType.FILE);
 		//FileUtils.copyFile(file, new File("screenshot.png"));
 		
-		//Get Height & Weidth
+		//Get Height & Width
 		int hei = driver.findElement(By.xpath("//input[@name=\"name\"]")).getRect().getDimension().getHeight();
 		int wdt = driver.findElement(By.xpath("//input[@name=\"name\"]")).getRect().getDimension().getWidth();
 		

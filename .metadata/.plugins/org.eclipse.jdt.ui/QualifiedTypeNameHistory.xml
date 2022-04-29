@@ -15,7 +15,6 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.interactions.ClickAction"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.support.ui.Select"/>
     <fullyQualifiedTypeName name="io.netty.util.internal.SystemPropertyUtil"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.JavascriptExecutor"/>
@@ -38,10 +37,16 @@
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.stream.Collector"/>
-    <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
     <fullyQualifiedTypeName name="org.testng.Assert"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+    <fullyQualifiedTypeName name="MultipleWindowsTabs"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WindowType"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.OutputType"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
 </qualifiedTypeNameHistroy>
