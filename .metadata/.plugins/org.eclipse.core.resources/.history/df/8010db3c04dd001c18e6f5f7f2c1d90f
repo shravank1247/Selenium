@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name ="TestNG package">
+    <packages>
+    	<package name="TestNG"/>
+    </packages>
+  </test>
+  
+    <test thread-count="1" name="Test3">
+<classes>
+  <class name="Into_TestNG3_parameterization">
+  	<methods>
+  		<include name="printdata"/> 
+  		<include name="DataSet"/> 
+    </methods>
+  </class>
+</classes>
+</test>
+  
+  
+</suite> <!-- Suite -->

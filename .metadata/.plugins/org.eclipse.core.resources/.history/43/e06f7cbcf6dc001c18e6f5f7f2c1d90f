@@ -1,0 +1,42 @@
+package TestNG;
+
+import org.testng.annotations.Test;
+
+import com.beust.jcommander.Parameters;
+
+public class Intro_TestNG2 {
+	
+	//Each method is treated as TestCase
+	//TestNG have JAVA compiler which can run methods without main method
+	
+	@Parameters({"URL"})
+	@Test
+	public void Method3(String URL)
+	{
+		System.out.println("Running Method3");
+		System.out.println("URL "+URL);
+	}
+
+	@Test(groups= {"smoke"})
+	public void Method4()
+	{
+		System.out.println("Running method4");
+	}
+	
+	@Test(dependsOnMethods={"Method3","Method1"})
+	public void Method5()
+	{
+		System.out.println("Running method5");
+	}
+	@Test(enabled=false)
+	public void Method6()
+	{
+		System.out.println("Running Method6");
+	}
+	@Test(timeOut=400)
+	public void Method7()
+	{
+		System.out.println("Running Method7");
+	}
+
+}

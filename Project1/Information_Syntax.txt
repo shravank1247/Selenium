@@ -46,8 +46,31 @@ js.executeScript("window.scrollBy(0,500)");
 //Table inside page to scroll
 js.executeScript("document.querySelector('.tableFixHead').scrollTop=500;");
 -------------------------------------------------------------------------------------------------------------------------------------
+8. TestNG Annotations::::::
+BeforeSuite AfterSuite
+BeforeClass AfterClass
+BeforeMethod AfterMethod
+BeforeTest AfterTest
+@Test(groups={"smoke"}) //Providing tag to testcases to make a group and execute
 
+TestNG Helper attributes::::
+@Test(dependsOnMethods={"Method3","Method1"}) //defining dependency of a testcase
+@Test(enabled=true) //to run a testcase or not
+@Test(timeOut=4000) //timeout before throwing an error
 
+How do you achive parameterisation 
+1. Driver data from testng xml file
+2. By using @dataprovide annotation
+
+Driver data from testng xml file.....For global environment variable setting
+<parameter name="keyname" value="APIKey"></parameter>
+@Parameter({"URL","Key"})
+
+Driver data from testng xml file.....By using @dataprovide annotation
+@Test(dataProvider="methodname")
+
+ITestListener interface which implements TestNG listerners
+========================================================================================
 //Set WebDriver property
 System.setProperty("webdriver.chrome.driver",path of chrome driver) 
 System.setProperty("webdriver.gecko.driver",path of firefox driver)

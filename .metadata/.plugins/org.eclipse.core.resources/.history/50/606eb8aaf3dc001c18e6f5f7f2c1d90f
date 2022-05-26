@@ -1,0 +1,27 @@
+package TestNG;
+
+import org.testng.annotations.Test;
+
+public class Intro_TestNG {
+	
+	//Each method is treated as TestCase
+	//TestNG have JAVA compiler which can run methods without main method
+	@Test
+	public void NoMainMethod()
+	{
+		System.out.println("Running without main method");
+	}
+
+	@Test
+	public void Method1()
+	{
+		System.out.println("Running method1");
+	}
+	
+	@Test
+	public void Method2()
+	{
+		System.out.println("Running method2");
+	}
+
+}
