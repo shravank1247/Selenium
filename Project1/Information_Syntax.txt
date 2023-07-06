@@ -1,4 +1,11 @@
+- To install TestNG
 
+Click "Help -> Install New Software..." on top level menu
+Help → Install new software → Here uncheck “Contact all update sites during install to find required software”
+Paste the url (Check the source below for latest supporting URL)
+>> https://testng.org/testng-eclipse-update-site
+
+===================================================================
 1. Actions
 //Actions class declaration
 Actions act = new Actions(driver);
